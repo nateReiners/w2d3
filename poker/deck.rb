@@ -1,9 +1,10 @@
 require_relative 'hand'
 
 class Deck
-  attr_reader :deck
+  attr_reader :cards
+
   def initialize
-    @deck = []
+    @cards = []
 
     deck_gen
   end
@@ -12,22 +13,20 @@ class Deck
     suits = [:Heart, :Diamond, :Club, :Spade]
     (2..14).each do |val|
       suits.each do |suit|
-        @deck << Card.new(val, suit)
+        @cards << Card.new(val, suit)
       end
     end
-    @deck.shuffle!
+    @cards.shuffle!
   end
 
-  def deal_cards
-    @deck.take(5)
-  end
+
 end
 #
-10.times do
-  x = Deck.new
-  hand = Hand.new(x.deal_cards)
-  hand.render_hand
-end
+# 10.times do
+#   x = Deck.new
+#   hand = Hand.new(x.deal_cards)
+#   hand.render_hand
+# end
 # #
 # p hand.straight_flush?
 # p hand.flush?

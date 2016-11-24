@@ -81,8 +81,9 @@ class Hand
   # end
 
   def render_hand
+    sorted_cards = @cards.sort_by { |card| card.value }
     hand_str = " "
-    @cards.each do |card|
+    sorted_cards.each do |card|
       hand_str << "#{card.to_string} "
     end
     hand_str << " #{self.analyze_hand_value}"
