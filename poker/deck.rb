@@ -23,15 +23,11 @@ class Deck
   end
 end
 #
-# 100.times do
-#   x = Deck.new
-#   hand = Hand.new(x.deal_cards)
-#   # hand.cards.each do |card|
-#   #   puts card.to_string
-#   # end
-#
-#   p hand.analyze_hand_value
-# end
+10.times do
+  x = Deck.new
+  hand = Hand.new(x.deal_cards)
+  hand.render_hand
+end
 # #
 # p hand.straight_flush?
 # p hand.flush?

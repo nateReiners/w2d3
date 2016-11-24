@@ -1,4 +1,5 @@
 require_relative "card"
+require 'colorize'
 
 class Hand
   attr_accessor :cards
@@ -78,6 +79,15 @@ class Hand
   #   when -1
   #     return -1
   # end
+
+  def render_hand
+    hand_str = " "
+    @cards.each do |card|
+      hand_str << "#{card.to_string} "
+    end
+    hand_str << " #{self.analyze_hand_value}"
+    puts hand_str
+  end
 
   private
 

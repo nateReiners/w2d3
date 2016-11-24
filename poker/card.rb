@@ -14,14 +14,16 @@ class Card
     # debugger
     suits_hash = {
         :Spade => "♠",
-        :Heart => "♥".red,
-        :Diamond => "♦".red,
+        :Heart => "♥".colorize(:red),
+        :Diamond => "♦".colorize(:red),
         :Club => "♣"
       }
-    if @value.between?(2,10)
+    if @value.between?(2,9)
+      "#{suits_hash[@suit]}#{@value} "
+    elsif @value == 10
       "#{suits_hash[@suit]}#{@value}"
     else
-      "#{suits_hash[@suit]}#{facecards[@value-11]}"
+      "#{suits_hash[@suit]}#{facecards[@value-11]} "
     end
   end
 
