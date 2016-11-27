@@ -127,7 +127,9 @@ class Game
   end
 end
 
-matt = Player.new("Matt")
-nate = Player.new("Nate")
-game = Game.new(matt, nate)
-game.run
+if __FILE__ == $PROGRAM_NAME
+  matt = Player.new("Matt")
+  nate = Player.new("Nate")
+  game = Game.new(matt, nate)
+  game.run
+end

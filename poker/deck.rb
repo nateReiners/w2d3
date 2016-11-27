@@ -19,13 +19,21 @@ class Deck
     @cards.shuffle!
   end
 
+# for testing only
+
+  # def deal_cards
+  #   @cards.take(5)
+  # end
+  #
 
 end
-#
-# 10.times do
+# #
+# 100.times do
 #   x = Deck.new
 #   hand = Hand.new(x.deal_cards)
-#   hand.render_hand
+#   if hand.analyze_hand_value >= 3
+#     hand.render_hand
+#   end
 # end
 # #
 # p hand.straight_flush?
